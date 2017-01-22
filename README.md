@@ -1,24 +1,9 @@
-# README
+# AWS-COST
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API service for AWS Cloud cost data
+The raw data is based on AWS price API.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+## API List
+* (TBD)
 * ...
