@@ -4,7 +4,12 @@ class InstancesController < ApplicationController
 
   # GET /instances
   def index
-    @instances = Instance.all.limit(10)
+    max = 90000 
+    if params[:location]
+      @instances = Instance.where(:location => params[:location]).limit(max)
+    else
+      @instances = Instance.all.limit(max)
+    end
 
     render json: @instances
   end

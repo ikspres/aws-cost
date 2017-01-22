@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122011241) do
+ActiveRecord::Schema.define(version: 20170122082509) do
 
   create_table "instances", force: :cascade do |t|
     t.string   "instance_type"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170122011241) do
     t.float    "clock_speed"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "pre_installed_sw"
   end
 
 end
