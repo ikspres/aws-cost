@@ -5,5 +5,8 @@ The raw data is based on AWS price API.
 
 
 ## API List
-* (TBD)
-* ...
+```
+GET    /instances/machine_types
+GET    /instances/locations
+GET    /instances   (TBD)
+```
