@@ -1,10 +1,21 @@
 class InstancesController < ApplicationController
   before_action :set_instance, only: [:show, :update, :destroy]
 
+
   # GET /instances
   def index
-    @instances = Instance.all
+    @instances = Instance.all.limit(10)
 
+    render json: @instances
+  end
+
+  def machine_types
+    @instances = Instance.uniq.pluck(:instance_type, :vcpu, :memory).reject {|i| i[0].nil? }
+    render json: @instances
+  end
+
+  def locations
+    @instances = Instance.uniq.pluck(:location).reject {|i| i.nil?}
     render json: @instances
   end
 
