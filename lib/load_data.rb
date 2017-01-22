@@ -31,6 +31,8 @@ module AwsData
       [25, "storage",],
       [22, "physical_processor",],
       [23, "clock_speed",],
+      [35, "tenancy",],
+      [0, "sku",],
     ]
 
     filename = "#{Rails.root}/lib/ec2.csv"
@@ -42,6 +44,10 @@ module AwsData
 
       h = {}
       cols.each { |i, c| h[c] = row[i] }
+
+      next if h["instance_type"].nil?
+      next if h["price_per_unit"] == 0
+
       Instance.create h
     end
   end
