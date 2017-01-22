@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instance_type: MyString
+  operating_system: MyString
+  price_per_unit: MyString
+  unit: MyString
+  term_type: MyString
+  lease_contract_length: MyString
+  purchase_option: MyString
+  location: MyString
+  vcpu: MyString
+  memory: MyString
+  storage: MyString
+  physical_processor: MyString
+  clock_speed: MyString
+
+two:
+  instance_type: MyString
+  operating_system: MyString
+  price_per_unit: MyString
+  unit: MyString
+  term_type: MyString
+  lease_contract_length: MyString
+  purchase_option: MyString
+  location: MyString
+  vcpu: MyString
+  memory: MyString
+  storage: MyString
+  physical_processor: MyString
+  clock_speed: MyString
