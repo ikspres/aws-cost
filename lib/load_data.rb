@@ -32,7 +32,9 @@ module AwsData
       [22, "physical_processor",],
       [23, "clock_speed",],
       [35, "tenancy",],
+      [38, "license_model",],
       [0, "sku",],
+      [14, "product_family",],
     ]
 
     filename = "#{Rails.root}/lib/ec2.csv"
@@ -43,10 +45,16 @@ module AwsData
                ) do |row|
 
       h = {}
-      cols.each { |i, c| h[c] = row[i] }
+      cols.each do |i, c|
+        row[i].downcase! if row[i].class == String
+        h[c] = row[i]
+      end
 
+
+      next unless ['compute instance', 'dedicated host'].include? h["product_family"]
       next if h["instance_type"].nil?
       next if h["price_per_unit"] == 0
+
 
       Instance.create h
     end

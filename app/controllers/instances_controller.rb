@@ -7,6 +7,8 @@ class InstancesController < ApplicationController
     max = 90000 
     if params[:location]
       @instances = Instance.where(:location => params[:location]).limit(max)
+    elsif params[:sku]
+      @instances = Instance.where(:sku => params[:sku]).limit(max)
     else
       @instances = Instance.all.limit(max)
     end

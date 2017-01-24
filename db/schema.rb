@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122141531) do
+ActiveRecord::Schema.define(version: 20170124002307) do
 
   create_table "instances", force: :cascade do |t|
     t.string   "instance_type"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170122141531) do
     t.string   "pre_installed_sw"
     t.string   "sku"
     t.string   "tenancy"
+    t.string   "license_model"
+    t.string   "product_family"
   end
 
 end
